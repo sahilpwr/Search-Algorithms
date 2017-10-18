@@ -4,7 +4,7 @@ public class BinarySearch {
 	
 	public int iterative(int[] array,int l,int r,int search)
 	{
-		while(l<r&& search >=array[l]&& search<=array[r])
+		while(l<=r)
 		{
 			int mid=l+(r-l)/2;
 			if(array[mid]==search)
@@ -23,7 +23,8 @@ public class BinarySearch {
 	}
 	public int recursive(int[] array,int l,int r,int search)
 	{
-		if(r>=l&&search >=array[l]&&search<=array[r])
+				
+		if(r>=l)
 		{
 			int mid=l+(r-l)/2;
 			if(search==array[mid])
@@ -42,14 +43,16 @@ public class BinarySearch {
 	public static void main(String[] args) 
 	{
 		BinarySearch binary=new BinarySearch();
-		// TODO Auto-generated method stub
+		
 		int []array={1,2,3,10,5,6,7,9,8,4,11};
 		Arrays.sort(array);
-		int search=10;
+		System.out.println(Arrays.toString(array));
+		int search=11;
 		
 		//int x=binary.recursive(array, 0, array.length-1, search);
+		
 		int x=binary.iterative(array, 0, array.length-1, search);
-		if(x>0)
+		if(x>=0)
 			System.out.println("Found"+x);
 		else
 			System.out.println("Not Found");
