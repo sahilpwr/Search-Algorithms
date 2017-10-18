@@ -5,7 +5,7 @@ public class InterpolationSearch {
 	public int Interpolation(int []array,int l,int r,int search)
 	{
 		
-		while(r>l&& search >=array[l]&&search<=array[r])
+		while(r>=l&& search >=array[l]&&search<=array[r])
 		{
 			int pos=l+(search-array[l])*((r-l)/(array[r]-array[l]));
 			if(array[pos]==search)
@@ -21,13 +21,13 @@ public class InterpolationSearch {
 	
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
+	
 		int []array={1,2,3,10,5,6,7,9,4,8,11};
 		Arrays.sort(array);
 		int search=11;
 		InterpolationSearch inter=new InterpolationSearch();
 		int x=inter.Interpolation(array, 0, array.length-1, search);
-		if(x>0)
+		if(x>=0)
 			System.out.println("Found"+x);
 		else
 			System.out.println("Not Found");
